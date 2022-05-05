@@ -8,7 +8,6 @@ import { name } from 'ejs';
 function Home() {
   const [studentName, setStudentName] = useState();
   const [students, setStudents] = useState([]);
-  const [user, setUser] = useState({name:'' , avatar: ''})
 
   function handleAddStudent(){
     const newStudent = {
@@ -23,12 +22,7 @@ function Home() {
   }
 
 useEffect(() => {
-  fetch('https://api.github.com/users/rodrigorgtic')
-  .then(response => response.json())
-  .then(data => {
-    avatar: data.avatar_url
-    name: data.name
-  })
+  console.log("useEffect foi disparado")
 }, [])
 
   return (
@@ -37,8 +31,8 @@ useEffect(() => {
     <h1>Lista de presença</h1>
 
     <div>
-      <strong>{user.name}</strong>
-      <img src={user.avatar} alt="Foto do perfil"/>
+      <strong>Romario</strong>
+      <img src="https://www.lance.com.br/files/article_main/uploads/2019/02/28/5c785e25c73b4.jpeg" alt="Foto do perfil"/>
     </div>
     
     </header>
